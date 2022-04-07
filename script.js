@@ -1,5 +1,6 @@
 function compute() {
   var principal = document.getElementById("principal").value;
+  if (!principal) return alert("Enter Amount");
   var rate = document.getElementById("rate").value;
   var years = document.getElementById("years").value;
 
