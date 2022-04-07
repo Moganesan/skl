@@ -16,3 +16,7 @@ h1 {
   border-radius: 25px;
   align-items: center;
 }
+
+.highlight {
+  background-color: yellow;
+}

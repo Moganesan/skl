@@ -1,6 +1,8 @@
 function compute() {
   var principal = document.getElementById("principal").value;
-  if (!principal) return alert("Enter Amount");
+  var sign = principal > 0 ? 1 : principal == 0 ? 0 : -1;
+  if (sign == 0 || sign == -1) return alert("enter a positive number");
+
   var rate = document.getElementById("rate").value;
   var years = document.getElementById("years").value;
 
@@ -10,7 +12,10 @@ function compute() {
 
   document.getElementById(
     "result"
-  ).innerHTML = `if you deposit ${principal} <br/>at an interest rate of ${rate}<br/>you will recieve an amount of ${interest},<br/> in the year ${year}`;
+  ).innerHTML = `if you deposit <span class='highlight'>${principal}</span> <br/>at an interest rate of <span class='highlight'>${rate}</span><br/>you will recieve an amount of <span class='highlight'>${interest}</span><br/> in the year <span class='highlight'>${year}</span>`;
+
+  document.getElementById("principal").focus();
+  document.getElementById("principal").value = "";
 }
 
 function updateRate() {
